@@ -1,0 +1,106 @@
+========================================
+GITHUB ACTIONS APK BUILD - STEP BY STEP GUIDE
+========================================
+
+This guide will help you automatically build your Android APK using GitHub Actions.
+
+STEP 1: DOWNLOAD YOUR PROJECT
+------------------------------
+1. In Replit, click the three dots (⋮) in the file explorer
+2. Select "Download as ZIP"
+3. Extract the ZIP file on your computer
+
+STEP 2: CREATE A GITHUB ACCOUNT (if you don't have one)
+--------------------------------------------------------
+1. Go to https://github.com
+2. Click "Sign up"
+3. Follow the registration steps
+
+STEP 3: CREATE A NEW GITHUB REPOSITORY
+---------------------------------------
+1. Log in to GitHub
+2. Click the "+" icon in the top right corner
+3. Select "New repository"
+4. Fill in:
+   - Repository name: prescription-finder (or any name you like)
+   - Description: "Kivy prescription finder mobile app"
+   - Choose "Public" or "Private"
+   - DO NOT initialize with README, .gitignore, or license
+5. Click "Create repository"
+
+STEP 4: UPLOAD YOUR PROJECT TO GITHUB
+--------------------------------------
+Option A: Using GitHub Web Interface (Easiest)
+1. On your new repository page, click "uploading an existing file"
+2. Drag and drop ALL your project files:
+   - main.py
+   - buildozer.spec
+   - requirements.txt
+   - build_instructions.txt
+   - .github folder (important!)
+3. Scroll down and click "Commit changes"
+
+Option B: Using Git Command Line
+1. Open terminal/command prompt in your extracted project folder
+2. Run these commands:
+   git init
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/YOUR_USERNAME/prescription-finder.git
+   git push -u origin main
+   (Replace YOUR_USERNAME with your GitHub username)
+
+STEP 5: WATCH THE BUILD PROCESS
+--------------------------------
+1. Go to your repository on GitHub
+2. Click the "Actions" tab at the top
+3. You should see a workflow run called "Build Android APK"
+4. Click on it to watch the build progress
+5. The build takes about 30-60 minutes (first time only)
+6. You'll see green checkmarks when each step completes
+
+STEP 6: DOWNLOAD YOUR APK
+--------------------------
+Once the build is complete:
+1. On the workflow run page, scroll down to "Artifacts"
+2. Click on "prescription-finder-apk" to download
+3. Extract the ZIP file
+4. You'll find your APK file inside: PrescriptionFinder-1.0-arm64-v8a-debug.apk
+
+STEP 7: INSTALL ON YOUR ANDROID DEVICE
+---------------------------------------
+1. Transfer the APK to your Android phone
+2. On your phone, go to Settings > Security
+3. Enable "Install from Unknown Sources"
+4. Open the APK file and install
+5. Grant any permissions requested
+
+AUTOMATIC BUILDS
+----------------
+Now, every time you push changes to GitHub:
+- The APK will automatically rebuild
+- You can download the latest version from the Actions tab
+- No need to build manually!
+
+TROUBLESHOOTING
+---------------
+If the build fails:
+1. Click on the failed workflow run
+2. Click on the "build" job
+3. Expand the step that failed (marked with ❌)
+4. Read the error message
+
+Common issues:
+- First build can timeout (just re-run it)
+- Check that all files were uploaded correctly
+- Make sure the .github folder was included
+
+COST
+----
+GitHub Actions is FREE for public repositories!
+Private repositories get 2,000 free minutes per month.
+
+========================================
+Need help? Check GitHub Actions documentation or ask for assistance!
+========================================

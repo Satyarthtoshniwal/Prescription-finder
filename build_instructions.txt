@@ -1,0 +1,65 @@
+========================================
+PRESCRIPTION FINDER - APK BUILD INSTRUCTIONS
+========================================
+
+This Kivy/KivyMD application is ready to be built as an Android APK.
+Building APK files requires a local Linux environment or CI/CD service.
+
+OPTION 1: BUILD ON LINUX (Ubuntu/Debian)
+-----------------------------------------
+
+1. Install system dependencies:
+   sudo apt update
+   sudo apt install -y git zip unzip openjdk-17-jdk python3-pip autoconf libtool pkg-config zlib1g-dev libncurses5-dev libncursesw5-dev libtinfo5 cmake libffi-dev libssl-dev
+
+2. Install Buildozer:
+   pip3 install --user buildozer
+   pip3 install --user cython
+
+3. Navigate to your project directory
+
+4. Build the APK (first build takes 30-60 minutes):
+   buildozer android debug
+
+5. The APK will be in: bin/PrescriptionFinder-1.0-arm64-v8a-debug.apk
+
+
+OPTION 2: BUILD USING GITHUB ACTIONS
+------------------------------------
+
+You can automate APK builds using GitHub Actions:
+
+1. Push this project to a GitHub repository
+2. Create .github/workflows/build.yml with Android build workflow
+3. GitHub will automatically build the APK on every push
+4. Download the APK from GitHub Actions artifacts
+
+
+OPTION 3: BUILD USING GOOGLE COLAB
+-----------------------------------
+
+1. Upload your project files to Google Drive
+2. Open Google Colab notebook
+3. Install buildozer and dependencies
+4. Run buildozer android debug
+5. Download the APK from Colab
+
+
+TESTING THE APK
+---------------
+
+1. Transfer the APK to your Android device
+2. Enable "Install from Unknown Sources" in Android settings
+3. Install the APK
+4. Grant necessary permissions when prompted
+
+
+TROUBLESHOOTING
+---------------
+
+- First build takes a long time (downloads Android SDK/NDK)
+- Ensure you have at least 10GB free disk space
+- If build fails, try: buildozer android clean
+- Check buildozer logs in .buildozer/logs/
+
+For more help: https://buildozer.readthedocs.io/
