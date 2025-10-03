@@ -31,10 +31,11 @@ jobs:
         sudo apt-get update -qq
         sudo apt-get install -y --no-install-recommends \
           git zip unzip wget \
-          autoconf libtool pkg-config zlib1g-dev \
+          autoconf automake libtool libtool-bin pkg-config zlib1g-dev \
           libncurses-dev \
           cmake libffi-dev libssl-dev \
-          build-essential ccache
+          build-essential ccache \
+          m4
 
     - name: Install Buildozer and Cython
       run: |
